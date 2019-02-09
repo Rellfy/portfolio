@@ -1,8 +1,9 @@
 module.exports = {
     entry: "./src/components/index.tsx",
+    mode: "production",
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: __dirname + "/out"
     },
     devtool: "source-map",
     resolve: {
@@ -10,12 +11,10 @@ module.exports = {
     },
     module: {
         rules: [
+            // { test: /\.scss$/, loader: "sass-loader" },
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     },
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    }
+    externals: { }
 };
