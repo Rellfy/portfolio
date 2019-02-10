@@ -5,7 +5,7 @@ A modular portfolio system. The fields/containers are placed from a JSON input a
 This project uses React, SCSS, Typescript and Webpack. NPM is also required.
 
 # Generating the portfolio
-To generate the portfolio page after configuring the input Webpack is used (simply run `webpack`). You should intall other dependencies first, with NPM: `npm install`. The static files will be created at `/out/`.
+To generate the portfolio page after configuring the input Webpack is used (simply run `webpack`). You should intall other dependencies first, with NPM: `npm install`. The static files will be created at `/dist/`.
 
 # Input schema
 There is an empty `input.json` file in the root source folder. The JSON file should include an array of `sections`, where each section mentions the section type and its content, and, optionally, an array of media links. Both objects are defined below.
