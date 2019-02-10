@@ -17,6 +17,20 @@ There is an `input.json` file in the `src/components` folder. The JSON file shou
 }
 ```
 
+Example input file
+
+```javascript
+{
+    "layouts": [{
+        "type": "title",
+        "content": "Lorem ipsum"
+    }, {
+        "type": "subtitle",
+        "content": "Dolor sit amet"
+    }]
+}
+```
+
 ## Layouts
 `layoutObject` has the following keys. Note that `layoutContent` depends on the type, and may be text (with HTML formatting) or an object. All available `layoutContent` variations are shown in the next layout. The sections are rendered according to their array index in the input file, top-down.
 

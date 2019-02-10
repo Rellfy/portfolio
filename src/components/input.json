@@ -1,3 +1,9 @@
 {
-    
+    "layouts":  [{
+        "type": "title",
+        "content": "Lorem Ipsum"
+    }, {
+        "type": "subtitle",
+        "content": "Dolor sit amet"
+    }]
 }
