@@ -1,5 +1,5 @@
 # portfolio
-A modular portfolio system. The fields/containers are placed from a JSON input and different sections can be included. In future versions CSS customisation through the input file will also be an option.
+A modular portfolio system. The fields/containers are placed from a JSON input and different layouts can be included. In future versions CSS customisation through the input file will also be an option.
 
 # Technology
 This project uses React, SCSS, Typescript and Webpack. NPM is also required.
@@ -8,55 +8,44 @@ This project uses React, SCSS, Typescript and Webpack. NPM is also required.
 To generate the portfolio page after configuring the input Webpack is used (simply run `webpack`). You should intall other dependencies first, with NPM: `npm install`. The static files will be created at `/dist/`.
 
 # Input schema
-There is an empty `input.json` file in the root source folder. The JSON file should include an array of `sections`, where each section mentions the section type and its content, and, optionally, an array of media links. Both objects are defined below.
+There is an `input.json` file in the `src/components` folder. The JSON file should include an array of `layouts`, where each layout mentions the layout type and its content.
 
 ```javascript
 // INPUT FILE
 {
-    "links": LinkObject[]
-    "sections": SectionObject[]
+    "layouts": layoutObject[]
 }
 ```
 
-## Links
-This section can be used for social media links. The icon URL can be either an absolute URL or relative to the output HTML file. If a Link is placed in the root input file, a section of links will be created in the portfolio. Links can also be used in certain sections (i.e `ProjectObject`)  
-A `LinkObject` has the following definition
-
-```javascript
-{
-    "name": string,
-    "iconURL": string,
-    "linkURL": string
-}
-```
-
-## Sections
-`SectionObject` has the following keys. Note that `SectionContent` depends on the type, and may be text (with HTML formatting) or an object. All available `SectionContent` variations are shown in the next section.
+## Layouts
+`layoutObject` has the following keys. Note that `layoutContent` depends on the type, and may be text (with HTML formatting) or an object. All available `layoutContent` variations are shown in the next layout. The sections are rendered according to their array index in the input file, top-down.
 
 ```javascript
 {
     "type": string,
-    "content": SectionContent
+    "content": layoutContent
 }
 ```
 
-The following sections can be used in `input.json`. All string types support HTML formatting.
+The following layouts can be used in `input.json`. All string types support HTML formatting.
 
 ### Title
 
-| Section type       | Content type         |
+| layout type        | Content type         |
 | ------------------ | -------------------- |
 | title              | string               |
 
 ### Subtitle
+Usually only used once, under the title.
 
-| Section type       | Content type         |
+| layout type        | Content type         |
 | ------------------ | -------------------- |
 | subtitle           | string               |
 
 ### Text Container
+A simple text container.
 
-| Section type       | Content type         |
+| layout type        | Content type         |
 | ------------------ | -------------------- |
 | text_container     | object               |
 
@@ -66,10 +55,24 @@ The following sections can be used in `input.json`. All string types support HTM
     "text": string
 }
 ```
+## Links
+This layout can be used for social media links.
+
+| layout type        | Content type         |
+| ------------------ | -------------------- |
+| links              | object               |
+
+```javascript
+{
+    "name": string,
+    "iconURL": string,
+    "linkURL": string,
+}
+```
 
 ### Rating/score container
 
-| Section type       | Content type         |
+| layout type        | Content type         |
 | ------------------ | -------------------- |
 | rating_container   | object               |
 
@@ -93,7 +96,7 @@ Where `score` is a number between 0 and 5
 
 ### Project container
 
-| Section type       | Content type         |
+| layout type        | Content type         |
 | ------------------ | -------------------- |
 | project_container  | object               |
 

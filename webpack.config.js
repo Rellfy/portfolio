@@ -2,7 +2,7 @@ let js = {
     entry: "./src/components",
     mode: "production",
     output: {
-        filename: "bundle.js",
+        filename: "main.js",
         path: __dirname + "/dist"
     },
     devtool: "source-map",
