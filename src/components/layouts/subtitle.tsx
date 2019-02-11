@@ -10,9 +10,9 @@ class Subtitle extends React.Component<ILayoutProps, ILayoutState> {
 
     render() {
         return (
-            <div className="layout subtitle">
+            <section className="layout subtitle">
                 { this.props.content }
-            </div>
+            </section>
         )
     }
 }

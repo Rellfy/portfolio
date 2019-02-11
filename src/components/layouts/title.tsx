@@ -10,9 +10,9 @@ class Title extends React.Component<ILayoutProps, ILayoutState> {
 
     render() {
         return (
-            <div className="layout title">
+            <section className="layout title">
                 { this.props.content }
-            </div>
+            </section>
         )
     }
 }
