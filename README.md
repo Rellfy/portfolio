@@ -45,20 +45,20 @@ The following layouts can be used in `input.json`. All string types support HTML
 
 ### Title
 
-| layout type        | Content type         |
+| Layout type        | Content type         |
 | ------------------ | -------------------- |
 | title              | string               |
 
 ### Subtitle
 
-| layout type        | Content type         |
+| Layout type        | Content type         |
 | ------------------ | -------------------- |
 | subtitle           | string               |
 
 ### Main Title
 A main title is composed of a title and a subtitle. It fills the viewport of a page.
 
-| layout type        | Content type         |
+| Layout type        | Content type         |
 | ------------------ | -------------------- |
 | main_title         | object               |
 
@@ -72,7 +72,7 @@ A main title is composed of a title and a subtitle. It fills the viewport of a p
 ### Text Container
 A simple text container.
 
-| layout type        | Content type         |
+| Layout type        | Content type         |
 | ------------------ | -------------------- |
 | text_container     | object               |
 
@@ -86,7 +86,7 @@ A simple text container.
 ## Links
 This layout can be used for social media links.
 
-| layout type        | Content type         |
+| Layout type        | Content type         |
 | ------------------ | -------------------- |
 | links              | object               |
 
@@ -100,7 +100,7 @@ This layout can be used for social media links.
 
 ### Rating/score container
 
-| layout type        | Content type         |
+| Layout type        | Content type         |
 | ------------------ | -------------------- |
 | rating_container   | object               |
 
@@ -124,7 +124,7 @@ Where `score` is a number between 0 and 5
 
 ### Project container
 
-| layout type        | Content type         |
+| Layout type        | Content type         |
 | ------------------ | -------------------- |
 | project_container  | object               |
 
