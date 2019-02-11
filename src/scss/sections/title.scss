@@ -1,4 +1,9 @@
 
 section.layout.title {
     font-size: 4vmax;
+
+    &:not(.main) {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
 }
