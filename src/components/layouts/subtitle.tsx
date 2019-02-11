@@ -6,15 +6,15 @@ interface ILayoutProps {
 
 interface ILayoutState { }
 
-class Title extends React.Component<ILayoutProps, ILayoutState> {
+class Subtitle extends React.Component<ILayoutProps, ILayoutState> {
 
     render() {
         return (
-            <div className="layout title">
+            <div className="layout subtitle">
                 { this.props.content }
             </div>
         )
     }
 }
 
-export { Title as Layout }
+export { Subtitle as Layout }
