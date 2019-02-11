@@ -23,7 +23,7 @@ export class Main extends React.Component<IProps, IState> {
         
         for (let i = 0; i < layoutNames.length; i++) {
             // Import layout module from file
-            const Layout = (await import(`./layouts/${layoutNames[i]}`)).Layout;
+            const Layout = (await import(`./layouts/${layoutNames[i]}`)).default;
             const props = this.inputLayoutContent(layoutNames[i]);
             layouts.push(<Layout {...props} />);
         }

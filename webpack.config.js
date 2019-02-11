@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let bundle = {
+module.exports = {
     entry: ['./src/components/index.tsx', './src/scss/index.scss'],
     mode: 'production',
     output: {
@@ -27,5 +27,3 @@ let bundle = {
     ],
     externals: { }
 };
-
-module.exports = bundle;

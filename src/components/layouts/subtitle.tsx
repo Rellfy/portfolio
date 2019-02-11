@@ -17,4 +17,4 @@ class Subtitle extends React.Component<ILayoutProps, ILayoutState> {
     }
 }
 
-export { Subtitle as Layout }
+export default Subtitle;

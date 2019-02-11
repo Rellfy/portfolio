@@ -8,10 +8,11 @@ section.layout {
     color: #131313;
 }
 
-@import './components/index';
+@import './components';
 
 @import './title';
 @import './subtitle';
+@import './main_title';
 @import './rating_container';
 @import './text_container';
 @import './project_container';

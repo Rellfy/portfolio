@@ -50,11 +50,24 @@ The following layouts can be used in `input.json`. All string types support HTML
 | title              | string               |
 
 ### Subtitle
-Usually only used once, under the title.
 
 | layout type        | Content type         |
 | ------------------ | -------------------- |
 | subtitle           | string               |
+
+### Main Title
+A main title is composed of a title and a subtitle. It fills the viewport of a page.
+
+| layout type        | Content type         |
+| ------------------ | -------------------- |
+| main_title         | object               |
+
+```javascript
+{
+    "title": string,
+    "subtitle": string
+}
+```
 
 ### Text Container
 A simple text container.
@@ -69,6 +82,7 @@ A simple text container.
     "text": string
 }
 ```
+
 ## Links
 This layout can be used for social media links.
 
