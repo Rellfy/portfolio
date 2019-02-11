@@ -1,12 +1,17 @@
 
 section.layout {
-    
+    width: 100%;
+    padding: 2em 0;
+    margin: 1em 0;
+    font-size: 2vmax;
+    text-align: center;
+    color: #131313;
 }
 
-@import './components';
+@import './components/index';
 
-@import './title.scss';
-@import './subtitle.scss';
-@import './rating_container.scss';
-@import './text_container.scss';
-@import './project_container.scss';
+@import './title';
+@import './subtitle';
+@import './rating_container';
+@import './text_container';
+@import './project_container';
