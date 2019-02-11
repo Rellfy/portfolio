@@ -2,8 +2,8 @@
     "layouts":  [{
         "type": "main_title",
         "content": {
-            "title": "Lorem Ipsum main",
-            "subtitle": "Dolor sit amet main"
+            "title": "Main title",
+            "subtitle": "Main subtitle"
         }
     },{
         "type": "title",
