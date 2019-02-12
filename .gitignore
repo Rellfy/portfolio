@@ -1,5 +1,7 @@
 # Output
 dist/
+# Example html file
+!dist/index.html
 
 # Logs
 logs
