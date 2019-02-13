@@ -1,11 +1,9 @@
 import * as React from 'react';
+import BaseLayout from '../base';
 
 interface IHOProps {
-    elements: any[];
-    grid: {
-        x: number;
-        y: number;
-    }
+    title?: string;
+    elements: React.ReactElement<any>[];
 }
 
 interface IHOState {
@@ -38,7 +36,7 @@ class HorizontalOverflow extends React.Component<IHOProps, IHOState> {
         const inLastPage = this.state.currentPage == (this.state.pages - 1);
 
         const elements = this.props.elements;
-        const elementStyle = {
+        /*const elementStyle = {
             width: this.props.grid.x,
             height: this.props.grid.y
         }; 
@@ -46,16 +44,16 @@ class HorizontalOverflow extends React.Component<IHOProps, IHOState> {
         for (let i = 0; i < elements.length; i++) {
             const Element = elements[i];
             elements[i] = <Element style={elementStyle} />
-        }
+        }*/
 
         return (
-            <section className="layout horizontal_overflow">
-                <div className={'left' + (inFirstPage ? ' disabled' : '')}></div>
-                <div className="element_grid">
-                    { this.props.elements }
+            <BaseLayout className="horizontal_overflow" title={this.props.title}>
+                <div className={'button left' + (inFirstPage ? ' disabled' : '')}></div>
+                <div className="elements">
+                    { elements }
                 </div>
-                <div className={'right' + (inLastPage ? ' disabled' : '')}></div>
-            </section>
+                <div className={'button right' + (inLastPage ? ' disabled' : '')}></div>
+            </BaseLayout>
         );
     }
 }
