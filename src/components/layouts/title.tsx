@@ -1,4 +1,5 @@
 import * as React from 'react';
+import BaseLayout from './base';
 
 interface ILayoutProps {
     content: string;
@@ -10,9 +11,9 @@ class Title extends React.Component<ILayoutProps, ILayoutState> {
 
     render() {
         return (
-            <section className="layout title">
+            <BaseLayout type="title">
                 { this.props.content }
-            </section>
+            </BaseLayout>
         )
     }
 }

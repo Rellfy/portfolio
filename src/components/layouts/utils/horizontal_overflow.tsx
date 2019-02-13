@@ -36,18 +36,9 @@ class HorizontalOverflow extends React.Component<IHOProps, IHOState> {
         const inLastPage = this.state.currentPage == (this.state.pages - 1);
 
         const elements = this.props.elements;
-        /*const elementStyle = {
-            width: this.props.grid.x,
-            height: this.props.grid.y
-        }; 
-
-        for (let i = 0; i < elements.length; i++) {
-            const Element = elements[i];
-            elements[i] = <Element style={elementStyle} />
-        }*/
 
         return (
-            <BaseLayout className="horizontal_overflow" title={this.props.title}>
+            <BaseLayout type="horizontal_overflow" title={this.props.title}>
                 <div className={'button left' + (inFirstPage ? ' disabled' : '')}></div>
                 <div className="elements">
                     { elements }
