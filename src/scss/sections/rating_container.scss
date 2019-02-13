@@ -1,6 +1,39 @@
+$rating-height: 5em;
 
-section.layout.horizontal_overflow {
-    
-    section.layout.rating_container {
+section.layout.horizontal_overflow .content {
+
+    .elements {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 330px));
+        justify-content: center;
+        grid-gap: 5%;
+        padding-left: 5%;
+
+        .rating {
+            display: grid;
+            text-align: center;
+            min-height: 80px;
+            min-width: 110px;
+            font-size: 0.75em;
+            height: $rating-height;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 50% 50%;
+            grid-template-areas: 
+                "name         score_number"
+                "score_points score_number";
+
+            .name {
+                grid-area: name;
+                line-height: $rating-height / 2;
+            }
+
+            .score_points {
+                grid-area: score_points;
+            }
+
+            .score_number {
+                grid-area: score_number;
+                background-color: red;
+            }
+        }
     }
 }

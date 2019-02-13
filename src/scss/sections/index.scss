@@ -1,11 +1,21 @@
 
 section.layout {
-    width: 100%;
-    padding: 2em 0;
     margin: 1em 0;
-    font-size: 2vmax;
-    text-align: center;
-    color: #131313;
+
+    .layout-title {
+        width: 90%;
+        padding-left: 10%;
+        font-size: 2.5vmax;
+        margin: 0;
+    }
+
+    .content {
+        width: 100%;
+        padding: 1.5em 0;
+        margin: 0;
+        font-size: 2vmax;
+        color: #131313;
+    }
 }
 
 @import './components';

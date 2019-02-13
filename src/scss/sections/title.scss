@@ -1,6 +1,7 @@
 
-section.layout.title {
+section.layout.title .content {
     font-size: 4vmax;
+    text-align: center;
 
     &:not(.main) {
         padding-bottom: 0;

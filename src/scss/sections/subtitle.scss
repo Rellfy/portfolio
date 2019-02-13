@@ -1,6 +1,7 @@
 
-section.layout.subtitle {
+section.layout.subtitle .content {
     font-size: 2vmax;
+    text-align: center;
 
     &:not(.main) {
         padding-top: 0;
