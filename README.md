@@ -115,7 +115,7 @@ This layout can be used for social media links.
 
 ```javascript
 {
-    "title": string,
+    "name": string,
     "score": number
 }
 ```
