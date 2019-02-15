@@ -18,12 +18,22 @@
             }, {
                 "name": "C++",
                 "score": 4
+            },
+            {
+                "name": "C#",
+                "score": 4
             }, {
                 "name": "Ruby",
                 "score": 3
             }, {
                 "name": "Rust", 
                 "score": 2
+            }, {
+                "name": "Haskell",
+                "score": 1
+            }, {
+                "name": "Haskell",
+                "score": 1
             }, {
                 "name": "Haskell",
                 "score": 1

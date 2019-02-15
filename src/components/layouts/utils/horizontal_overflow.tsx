@@ -7,43 +7,51 @@ interface IHOProps {
 }
 
 interface IHOState {
-    pages: number;
+    pageCount: number;
     currentPage: number;
 }
 
 class HorizontalOverflow extends React.Component<IHOProps, IHOState> {
 
+    private static maxPageElements = 6;
+
+    private firstElement: HTMLDivElement;
+    private elementsDiv: HTMLDivElement;
+
     public state: IHOState = {
-        pages: 0,
+        pageCount: 1,
         currentPage: 0
     }
 
     public componentDidMount() {
         this.setState({
-            pages: this.props.elements.length,
+            pageCount: Math.ceil(this.props.elements.length / HorizontalOverflow.maxPageElements),
             currentPage: 0
         });
+    }
 
-        this.setPages();
+    private scrollElements(right: boolean) {
+        this.elementsDiv.scrollTo();
     }
     
-    private setPages() {
-        // read elements & structure them in a grid
-    }
-
     public render() {
         const inFirstPage = this.state.currentPage == 0;
-        const inLastPage = this.state.currentPage == (this.state.pages - 1);
+        const inLastPage = this.state.currentPage == (this.state.pageCount - 1);
 
-        const elements = this.props.elements;
+        const elements = this.props.elements.map((Element: any, i) => {
+            if (i != 0)
+                return;
+            
+            return <Element ref={(ref: any) => { this.firstElement = ref }} />
+        });
 
         return (
             <BaseLayout type="horizontal_overflow" title={this.props.title}>
-                <div className={'button left' + (inFirstPage ? ' disabled' : '')}></div>
-                <div className="elements">
+                <div className={'button left' + (inFirstPage ? ' disabled' : '')} onClick={() => { this.scrollElements(false) }}>&lt;</div>&nbsp;
+                <div className="elements" ref={(ref) => { this.elementsDiv = ref }}>
                     { elements }
                 </div>
-                <div className={'button right' + (inLastPage ? ' disabled' : '')}></div>
+                <div className={'button right' + (inLastPage ? ' disabled' : '')} onClick={() => { this.scrollElements(true) }}>&gt;</div>
             </BaseLayout>
         );
     }
