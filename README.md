@@ -94,7 +94,7 @@ This layout can be used for social media links.
 {
     "name": string,
     "iconURL": string,
-    "linkURL": string,
+    "linkURL": string
 }
 ```
 
@@ -140,9 +140,12 @@ Where `score` is a number between 0 and 5
 ```javascript
 {
     "title": string,
-    "language": string // Abbreviation. e.g 'JS', 'PY'
-    "timespan" string | undefined, // e.g '2013-2016'
-    "link": LinkObject | undefined,
+    "language": string, // Abbreviation. e.g 'JS', 'PY'
+    "timespan" string, | undefined, // e.g '2013-2016'
+    "link": {
+        "text": string,
+        "url": string
+    } | undefined,
     "description": string
 }
 ```
