@@ -2,8 +2,10 @@ import * as React from 'react';
 import BaseLayout from '../base';
 
 interface IHOProps {
+    type: string;
     title?: string;
-    elements: React.ReactElement<any>[];
+    elements: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>[];
+    scrollWidth: number;
 }
 
 interface IHOState {
@@ -15,6 +17,8 @@ class HorizontalOverflow extends React.Component<IHOProps, IHOState> {
 
     private static maxPageElements = 6;
 
+    private inFirstPage: boolean;
+    private inLastPage: boolean;
     private firstElement: HTMLDivElement;
     private elementsDiv: HTMLDivElement;
 
@@ -31,27 +35,28 @@ class HorizontalOverflow extends React.Component<IHOProps, IHOState> {
     }
 
     private scrollElements(right: boolean) {
-        this.elementsDiv.scrollTo();
+        const scrollValue = (right ? this.props.scrollWidth : -this.props.scrollWidth) * HorizontalOverflow.maxPageElements;
+        this.elementsDiv.scroll({ left: this.elementsDiv.scrollLeft + scrollValue, behavior: 'smooth' })
+
+        if ((this.inLastPage && right) || (this.inFirstPage && !right))
+            return;
+        
+        this.setState({
+            currentPage: right ? this.state.currentPage + 1 : this.state.currentPage - 1
+        });
     }
     
     public render() {
-        const inFirstPage = this.state.currentPage == 0;
-        const inLastPage = this.state.currentPage == (this.state.pageCount - 1);
-
-        const elements = this.props.elements.map((Element: any, i) => {
-            if (i != 0)
-                return;
-            
-            return <Element ref={(ref: any) => { this.firstElement = ref }} />
-        });
+        this.inFirstPage = this.state.currentPage == 0;
+        this.inLastPage = this.state.currentPage == (this.state.pageCount - 1);
 
         return (
-            <BaseLayout type="horizontal_overflow" title={this.props.title}>
-                <div className={'button left' + (inFirstPage ? ' disabled' : '')} onClick={() => { this.scrollElements(false) }}>&lt;</div>&nbsp;
+            <BaseLayout type={`horizontal_overflow ${this.props.type}`} title={this.props.title}>
+                <div className={'button left' + (this.inFirstPage ? ' disabled' : '')} onClick={() => { this.scrollElements(false) }}>&lt;</div>&nbsp;
                 <div className="elements" ref={(ref) => { this.elementsDiv = ref }}>
-                    { elements }
+                    { this.props.elements }
                 </div>
-                <div className={'button right' + (inLastPage ? ' disabled' : '')} onClick={() => { this.scrollElements(true) }}>&gt;</div>
+                <div className={'button right' + (this.inLastPage ? ' disabled' : '')} onClick={() => { this.scrollElements(true) }}>&gt;</div>
             </BaseLayout>
         );
     }

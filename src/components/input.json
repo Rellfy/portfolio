@@ -18,29 +18,94 @@
             }, {
                 "name": "C++",
                 "score": 4
-            },
-            {
+            }, {
                 "name": "C#",
                 "score": 4
             }, {
                 "name": "Ruby",
                 "score": 3
             }, {
+                "name": "Lua",
+                "score": 2
+            }, {
                 "name": "Rust", 
                 "score": 2
             }, {
-                "name": "Haskell",
+                "name": "Java",
                 "score": 1
             }, {
                 "name": "Haskell",
                 "score": 1
             }, {
-                "name": "Haskell",
+                "name": "Objective-C",
                 "score": 1
             }]
         }
+    },{
+        "type": "text_container",
+        "content": {
+            "title": "About",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque odio, in finibus nunc. Aliquam sit amet lobortis sapien. Suspendisse eget maximus diam. Maecenas elementum lectus tellus, id cursus justo lacinia a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed feugiat risus dignissim mi volutpat, posuere eleifend tortor condimentum. Nulla vitae iaculis orci. Nunc fermentum felis a efficitur facilisis. Curabitur eget purus nec purus blandit viverra.<br/>Phasellus sollicitudin lorem at hendrerit finibus. Duis accumsan vulputate felis, et aliquet nibh maximus sed. Praesent pellentesque condimentum accumsan. Cras eget sagittis sapien. Pellentesque molestie est nulla, eget ultricies ligula fringilla in. Nulla et lacus eget sem tristique efficitur. Aliquam a mi eu quam gravida consequat. Ut leo turpis, faucibus vel semper sed, maximus a enim. Integer massa neque, ultricies eget auctor eu, dignissim eu dolor. Phasellus ac vestibulum dui, nec luctus ante. Phasellus maximus nisl nisl, sed gravida lorem facilisis eu."
+        }
     }, {
-        "type": "subtitle",
-        "content": "Dolor sit amet"
+        "type": "project_container",
+        "content": {
+            "title": "Projects",
+            "projects": [{
+                "title": "Lua Project",
+                "language": "Lua",
+                "timespan": "2019",
+                "link": {
+                    "text": "view on GitHub",
+                    "url": "https://github.com"
+                },
+                "description": "This is an example project"
+            }, {
+                "title": "C# project",
+                "language": "C#",
+                "timespan": "2017-2018",
+                "link": {
+                    "text": "view on GitHub",
+                    "url": "https://github.com"
+                },
+                "description": "This is an example project"
+            }, {
+                "title": "Rust project",
+                "language": "Rust",
+                "timespan": "2017-2018",
+                "link": {
+                    "text": "view on GitHub",
+                    "url": "https://github.com"
+                },
+                "description": "This is an example project"
+            }, {
+                "title": "Ruby project",
+                "language": "Ruby",
+                "timespan": "2017-2018",
+                "link": {
+                    "text": "view on GitHub",
+                    "url": "https://github.com"
+                },
+                "description": "This is an example project"
+            }, {
+                "title": "Haskell project",
+                "language": "Haskell",
+                "timespan": "2017-2018",
+                "link": {
+                    "text": "view on GitHub",
+                    "url": "https://github.com"
+                },
+                "description": "This is an example project"
+            }, {
+                "title": "C++ project",
+                "language": "C++",
+                "timespan": "2017-2018",
+                "link": {
+                    "text": "view on GitHub",
+                    "url": "https://github.com"
+                },
+                "description": "This is an example project"
+            }]
+        }
     }]
 }

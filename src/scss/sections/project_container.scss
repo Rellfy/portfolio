@@ -1,6 +1,69 @@
+$project-width: 20vw;
 
-section.layout.horizontal_overflow {
+section.layout.horizontal_overflow.project_container .content {
     
-    section.layout.project_container {
+    .elements {
+        grid-template-rows: auto;
+        grid-template-columns: repeat(1, minmax(190px, $project-width));
+        grid-gap: 0 1.65vw;
+
+        .project {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            grid-template-rows: 25% 75%;
+            grid-template-areas:
+                "title language"
+                "link  link"
+                "desc  desc";
+            min-width: 190px;
+            height: 10em;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.5);
+            border-radius: 1rem;
+            min-width: $project-width;
+
+            &.with_link {
+                grid-template-rows: 25% 7.5% 67.5%;
+            }
+
+            .title, .language, .link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .title {
+                grid-area: title;
+                font-size: 0.6em;
+                background: #eee;
+                border-top-left-radius: 0.9rem;
+            }
+
+            .language {
+                grid-area: language;
+                border-left: 1px solid rgba(0,0,0,0.5);
+                font-weight: 100;
+                color: #eaeaea;
+                background: #303030;
+                border-top-right-radius: 0.9rem;
+            }
+            
+            .link {
+                grid-area: link;
+                font-size: 0.5em;
+                border-top: 1px solid rgba(0,0,0,0.5);
+                border-bottom: 1px solid rgba(0,0,0,0.5);
+                user-select: none;
+                cursor: pointer;
+                background-color: rgba(0,0,0,0.02)
+            }
+
+            .description {
+                grid-area: desc;
+                text-align: left;
+                font-size: 0.55em;
+                padding: 2.5% 5%;
+            }
+        }
     }
 }

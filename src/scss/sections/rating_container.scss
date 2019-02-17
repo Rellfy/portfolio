@@ -1,18 +1,18 @@
 $rating-height: 5em;
 
-section.layout.horizontal_overflow .content {
+section.layout.horizontal_overflow.rating_container .content {
 
     .elements {
-        //grid-template-columns: repeat(auto-fit, minmax(110px, 330px));
         grid-template-rows: repeat(2, auto);
+        grid-gap: 0.5em 8vw;
+        //grid-template-columns: repeat(auto-fit, minmax(110px, 330px));
         // justify-content: center;
-        grid-gap: 0.5em 4em;
 
         .rating {
             display: grid;
             text-align: center;
             height: 5em;
-            width: 10em;
+            width: 15vw;
             font-size: 0.75em;
             height: $rating-height;
             grid-template-columns: 60% 40%;
@@ -22,9 +22,13 @@ section.layout.horizontal_overflow .content {
                 "score_points score_number";
             border-left: 3px solid #808080;
 
+            &:last-child {
+                padding-right: 8vw;
+            }
+
             .name {
                 grid-area: name;
-                line-height: $rating-height / 2;
+                line-height: $rating-height - ($rating-height / 4);
                 text-align: left;
                 padding-left: 10%;
             }
@@ -32,6 +36,7 @@ section.layout.horizontal_overflow .content {
             .score_points {
                 grid-area: score_points;
                 padding-left: 10%;
+                text-align: left;
 
                 .score {
                     width: 12%;
@@ -82,6 +87,29 @@ section.layout.horizontal_overflow .content {
                     font-weight: 100;
                 }
                 // background-color: red;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    section.layout.horizontal_overflow .content {
+
+        .elements {
+    
+            .rating {
+
+                .name {
+                    font-size: 0.8em;
+                }
+                
+                .score_number {
+
+                    span.out_of {
+                        font-size: 1.5em;
+                    }
+                }
             }
         }
     }

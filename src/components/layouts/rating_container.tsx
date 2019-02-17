@@ -19,15 +19,6 @@ export interface IRating {
 class RatingContainer extends React.Component<IRCProps, IRCState> {
 
     private maxScore: number = 5;
-    private scrollWidth: object = null;
-
-    private getScrollWidth(ref: HTMLDivElement) {
-        if (this.scrollWidth != null)
-            return;
-        
-        this.scrollWidth = ref.getBoundingClientRect();
-        console.log('w: ', this.scrollWidth);
-    }
 
     private getRatingElement(rating: IRating) {
         const scores: React.ReactElement<any>[] = [];
@@ -38,7 +29,7 @@ class RatingContainer extends React.Component<IRCProps, IRCState> {
         }
 
         return (
-            <div className="rating" ref={this.getScrollWidth.bind(this)}>
+            <div className="rating">
                 <div className="name">{ rating.name }</div>
                 <div className="score_points">
                     { scores }
@@ -56,9 +47,12 @@ class RatingContainer extends React.Component<IRCProps, IRCState> {
         const elements = this.props.content.ratings.map((rating) => {
             return this.getRatingElement(rating);
         });
-
-        return (
-            <HorizontalOverflow title={this.props.content.title} elements={elements} />
+        
+        return (        
+            <HorizontalOverflow type="rating_container"
+                                title={this.props.content.title}
+                                scrollWidth={window.innerWidth * 0.15}
+                                elements={elements} />
         );
     }
 }
